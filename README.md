@@ -80,15 +80,6 @@ O ejecutar con Maven (si tu mvn usa JDK 17):
 .\mvnw.cmd spring-boot:run
 ```
 
-## Alternativa: usar H2 en memoria (perfil `dev`)
-Si no quieres depender de MySQL en desarrollo, el proyecto incluye la dependencia H2. Ejecuta la aplicación con el perfil `dev` (requiere Java 17):
-
-```powershell
-java -jar target\estudiantes-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
-# o
-.\mvnw.cmd -Dspring-boot.run.profiles=dev spring-boot:run
-```
-
 ## Rutas principales
 - Lista: `http://localhost:8080/estudiantes`
 - Nuevo: `http://localhost:8080/estudiantes/nuevo`
@@ -125,10 +116,6 @@ Las capturas de pantalla del proyecto están en `docs/screenshots`. Abre esa car
 ## Contribuir
 - Puedes sumar estilos, validaciones en frontend o internacionalización. Sigue la estructura por capas (controller/service/repository/model) y las convenciones Java/Thymeleaf existentes.
 
-## Contacto
-- Si necesitas que automatice la creación de la base de datos desde el proyecto o que añada scripts SQL en `src/main/resources/db`, dime y lo integro.
 
----
-README generado y actualizado.
 
 
