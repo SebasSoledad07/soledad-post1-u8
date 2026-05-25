@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Estudiantes</title></head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Estudiantes</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
 <body>
-<h1>Lista de Estudiantes</h1>
-<a th:href="@{/estudiantes/nuevo}">Nuevo Estudiante</a>
-<table>
+<div class="container">
+    <h1>Lista de Estudiantes</h1>
+    <a class="button" th:href="@{/estudiantes/nuevo}">Nuevo Estudiante</a>
+    <table>
     <thead>
 
-    <tr><th>Nombre</th><th>Apellido</th><th>Correo</th><th>Carrera</th><th>A
-        cciones</th></tr>
+    <tr><th>Nombre</th><th>Apellido</th><th>Correo</th><th>Carrera</th><th>Acciones</th></tr>
     </thead>
     <tbody>
     <tr th:each="e : ${estudiantes}">
@@ -16,14 +21,13 @@
         <td th:text="${e.apellido}"></td>
         <td th:text="${e.correo}"></td>
         <td th:text="${e.carrera}"></td>
-        <td>
-            <a
-                    th:href="@{/estudiantes/editar/{id}(id=${e.id})}">Editar</a>
-            <a
-                    th:href="@{/estudiantes/eliminar/{id}(id=${e.id})}">Eliminar</a>
+        <td class="actions">
+            <a class="button secondary" th:href="@{/estudiantes/editar/{id}(id=${e.id})}">Editar</a>
+            <a class="button" th:href="@{/estudiantes/eliminar/{id}(id=${e.id})}">Eliminar</a>
         </td>
     </tr>
     </tbody>
 </table>
+    </div>
 </body>
 </html>

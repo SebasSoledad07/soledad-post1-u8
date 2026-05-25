@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title th:text="${titulo}">Formulario</title></head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title th:text="${titulo}">Formulario</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
 <body>
-<h1 th:text="${titulo}"></h1>
-<form th:action="@{/estudiantes/guardar}" th:object="${estudiante}"
-      method="post">
+<div class="container">
+    <h1 th:text="${titulo}"></h1>
+    <form th:action="@{/estudiantes/guardar}" th:object="${estudiante}"
+          method="post">
     <input type="hidden" th:field="*{id}" />
     <div>
         <label>Nombre:</label>
@@ -30,8 +36,11 @@
         <span th:if="${#fields.hasErrors('carrera')}"
               th:errors="*{carrera}"></span>
     </div>
-    <button type="submit">Guardar</button>
-    <a th:href="@{/estudiantes}">Cancelar</a>
-</form>
+    <div class="footer">
+        <button type="submit">Guardar</button>
+        <a class="button secondary" th:href="@{/estudiantes}">Cancelar</a>
+    </div>
+    </form>
+    </div>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Confirmar eliminación</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div class="container">
+	<h1>Confirmar eliminación</h1>
+	<div class="confirm-box">
+		<p>¿Deseas eliminar al estudiante <strong th:text="${estudiante.nombre} + ' ' + ${estudiante.apellido}"></strong>?</p>
+		<p><strong>Correo:</strong> <span th:text="${estudiante.correo}"></span></p>
+		<p><strong>Carrera:</strong> <span th:text="${estudiante.carrera}"></span></p>
+	</div>
+	<div class="footer">
+		<form th:action="@{/estudiantes/eliminar/{id}(id=${estudiante.id})}" method="post" style="display:inline">
+			<button type="submit" class="button">Confirmar eliminación</button>
+		</form>
+		<a class="button secondary" th:href="@{/estudiantes}">Cancelar</a>
+	</div>
+	</div>
+</body>
+</html>
